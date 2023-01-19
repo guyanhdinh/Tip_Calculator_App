@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Tip Calculator App</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">  
+</head>
+<body>
+
+  <div class="header">
+    <img class="logo" src="images/logo.svg" alt="logo">
+  </div>
+
+  <div class="calculator-section">
+    <div class="container">
+
+      <div class="container-input">
+        <div class="container-bill">
+          <label for="bill">Bill</label>
+          <div class="bill-input">
+            <input id="bill" type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <img src="images/icon-dollar.svg" alt="bill">
+          </div>
+        </div>
+        
+        <div class="container-tip">
+          <label for="tip">Select Tip %</label>
+          <div class="tip-button">
+            <div>
+              <button class="btn" value="5">5%</button>
+              <button class="btn" value="10">10%</button>
+              <button class="btn" value="15">15%</button>
+            </div>
+            <div>
+              <button class="btn" value="25">25%</button>
+              <button class="btn" value="50">50%</button>
+              <input type="text" id="customTip" placeholder="Custom" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            </div>
+          </div>
+        </div>
+  
+        <div class="container-people">
+
+          <div class="people-heading">
+            <label for="people">Number of People</label>
+            <span id="error"></span>
+          </div>
+
+          <div class="people-input">
+            <input id="people" type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <img src="images/icon-person.svg" alt="person">
+          </div>
+        </div>
+      
+      </div>
+      
+      <div class="container-output">
+  
+        <div class="output-tip">
+          <p>Tip Amount <br><span class="output-span">/ person</span></p>
+          <h2 id="tipAmount">$0.00</h2>
+        </div>
+  
+        <div class="output-total">
+          <p>Total <br><span class="output-span">/ person</span></p>
+          <h2 id="totalAmount">$0.00</h2> 
+        </div>
+      
+        <button type="button" class="reset-btn" id="resetBtn">RESET</button>
+    
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/guyanhdinh" target="_blank">Guy Dinh</a>.
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
